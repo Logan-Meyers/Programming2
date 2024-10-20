@@ -13,3 +13,6 @@
 [submodule "Projects/vs-sln-gen"]
 	path = Projects/vs-sln-gen
 	url = https://github.com/Huskiefusion/vs-sln-gen.git
+[submodule "College/attendance-clicker"]
+	path = College/attendance-clicker
+	url = https://github.com/donmjoseph/attendance-clicker.git
