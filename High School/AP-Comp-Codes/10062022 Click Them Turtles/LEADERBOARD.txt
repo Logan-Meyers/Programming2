@@ -1,0 +1,5 @@
+logan,100
+apppppp,16
+logan,15
+dylan,10
+banana,10

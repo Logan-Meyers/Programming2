@@ -1,0 +1,10 @@
+https://realpython.com/operator-function-overloading/
+https://www.geeksforgeeks.org/how-to-create-a-text-input-box-with-pygame/
+https://www.youtube.com/watch?v=Y7TesKMSE74
+https://dobrian.github.io/cmp/topics/physics-of-sound/1.frequency-and-pitch.html
+https://jxxcarlson.medium.com/creating-audio-files-with-python-55cba61bfe73
+https://www.geeksforgeeks.org/python-using-2d-arrays-lists-the-right-way/
+https://www.youtube.com/watch?v=fwtA2-Nhixw
+https://docs.python.org/3/library/typing.html
+https://superfastpython.com/run-function-in-new-thread/
+https://pythonbasics.org/python-play-sound/
