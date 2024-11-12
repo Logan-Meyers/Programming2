@@ -7,12 +7,12 @@
 [submodule "Projects/MinecraftProfileManager"]
 	path = Projects/MinecraftProfileManager
 	url = https://github.com/TheTerrarian03/MinecraftProfileManager.git
-[submodule "Projects/vs-sln-gen"]
-	path = Projects/vs-sln-gen
-	url = https://github.com/Huskiefusion/vs-sln-gen.git
 [submodule "College/attendance-clicker"]
 	path = College/attendance-clicker
 	url = https://github.com/donmjoseph/attendance-clicker.git
 [submodule "Projects/VisualStudioTools"]
 	path = Projects/VisualStudioTools
 	url = https://github.com/TheTerrarian03/VisualStudioTools.git
+[submodule "Projects/vs-sln-gen"]
+	path = Projects/vs-sln-gen
+	url = https://github.com/Huskiefusion/vs-sln-gen.git
