@@ -6,10 +6,11 @@ local config = wezterm.config_builder()
 
 -- Animaition Stuff
 config.animation_fps = 75
-config.font_size = 10
+config.font_size = 12
 
 -- Font Things
 config.font = wezterm.font 'Otonokizaka Mono II'
+config.bold_brightens_ansi_colors = BrightAndBold
 
 -- Colors
 config.colors = {
@@ -63,12 +64,20 @@ config.enable_scroll_bar = true
 config.window_decorations = "RESIZE"
 config.window_frame = {
     active_titlebar_bg = '#171520',
-    inactive_titlebar_bg = '#171520'
+    inactive_titlebar_bg = '#171520',
+    border_left_width = '0.3cell',
+    border_right_width = '0.3cell',
+    border_bottom_height = '0.2cell',
+    border_top_height = '0.2cell',
+    border_left_color = '#3d3650',
+    border_right_color = '#3d3650',
+    border_bottom_color = '#3d3650',
+    border_top_color = '#3d3650',
 }
 
 -- Initial Windows
-config.initial_rows = 28
-config.initial_cols = 100
+config.initial_rows = 32
+config.initial_cols = 128
 
 -- and finally, return the configuration to wezterm
 return config
