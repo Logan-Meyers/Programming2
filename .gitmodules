@@ -16,3 +16,5 @@
 [submodule "Projects/vs-sln-gen"]
 	path = Projects/vs-sln-gen
 	url = https://github.com/Huskiefusion/vs-sln-gen.git
+[submodule]
+	High = School/AP-Comp-Codes/AP_Comp_Encoder.branch
