@@ -12,6 +12,7 @@ export LDFLAGS="-L/usr/local/opt/game-porting-toolkit/lib"
 
 alias pyvenv="source ~/Desktop/Programming2/PyVenv/venv/bin/activate"
 alias cdprog="cd ~/Desktop/Programming2/"
+alias gitqcomm='cdprog; git status; git add .; git commit -m "Updated Submodules" && git push'
 alias finder="open $1"
 alias tidalpy="pyvenv; tidal-dl"
 alias tallylines='function _tallylines() { find "$1" -type f -exec cat {} + | wc -l; }; _tallylines'export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
