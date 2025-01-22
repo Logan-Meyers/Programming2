@@ -18,3 +18,6 @@
 	url = https://github.com/Huskiefusion/vs-sln-gen.git
 [submodule]
 	High = School/AP-Comp-Codes/AP_Comp_Encoder.branch
+[submodule "Projects/MinecraftServerManager"]
+	path = Projects/MinecraftServerManager
+	url = https://github.com/TheTerrarian03/MinecraftServerManager.git
