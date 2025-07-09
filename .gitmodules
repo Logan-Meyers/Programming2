@@ -21,3 +21,6 @@
 [submodule "Projects/MinecraftServerManager"]
 	path = Projects/MinecraftServerManager
 	url = https://github.com/TheTerrarian03/MinecraftServerManager.git
+[submodule "Projects/Drive-Formatter"]
+	path = Projects/Drive-Formatter
+	url = https://github.com/Logan-Meyers/Drive-Formatter.git
