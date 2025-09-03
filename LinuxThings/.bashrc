@@ -123,6 +123,20 @@ fi
 alias pyvenv="source ~/Desktop/Programming2/PyVenv/venv/bin/activate"
 alias cdprog="cd ~/Desktop/Programming2"
 
+# personal git shortcuts
+alias gst="git status"
+alias gfp="git fetch && git pull"
+# function to git add all, commit with passed along message, and push if successful
+gacp() {
+  if [ $# -eq 0 ]; then
+    echo "Error: Commit message required."
+    return 1
+  fi
+  git add .
+  git commit -m "$*"
+  git push
+}
+
 # USER DEFINED GIT BRANCH GETTER FOR PS1
 git_branch() {
   # Check if we're in a Git repo
