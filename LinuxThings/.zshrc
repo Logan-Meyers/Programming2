@@ -10,12 +10,24 @@ fi
 export PATH="/usr/local/opt/game-porting-toolkit/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/game-porting-toolkit/lib"
 
+gacp() {
+  if [ $# -eq 0 ]; then
+    echo "Error: Commit message required."
+    return 1
+  fi
+  git add .
+  git commit -m "$*"
+  git push
+}
+
 alias pyvenv="source ~/Desktop/Programming2/PyVenv/venv/bin/activate"
-alias cdprog="cd ~/Desktop/Programming2/"
+alias cdprog="cd ~/Documents/Programming2/"
 alias gitqcomm='cdprog; git status; git add .; git commit -m "Updated Submodules" && git push'
 alias finder="open $1"
 alias tidalpy="pyvenv; tidal-dl"
 alias tallylines='function _tallylines() { find "$1" -type f -exec cat {} + | wc -l; }; _tallylines'export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+alias gst='git status'
+alias gfp='git fetch && git pull'
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 git_branch() {
