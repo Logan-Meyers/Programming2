@@ -42,7 +42,7 @@ void delete_node(Node **head, Node *node) {
 }
 
 // Print list forward
-void print_list(Node *head) {
+void displayRecords(Node *head) {
     Node *curr = head;
     while (curr != NULL) {
         printf("Title: %s, Artist: %s, Album: %s, Year: %d, Duration: %d\n",
@@ -108,7 +108,7 @@ void sortRecords(Node** pList, int choice, int listLength) {
 
                     // debugging
                     printf("\nIn sort, before operations:\n");
-                    print_list(*pList);
+                    displayRecords(*pList);
                     printf("artists: %s, %s, %d\n", pCur->data.artist, pTemp->data.artist, strcmp(pCur->data.artist, pTemp->data.artist));
 
                     // check if current's artist should be after next's artist
@@ -133,7 +133,7 @@ void sortRecords(Node** pList, int choice, int listLength) {
 
                         // debuggign
                         printf("\nIn sort, after operations:\n");
-                        print_list(*pList);
+                        displayRecords(*pList);
                     }
 
                     // optimization step, also important for flow:
