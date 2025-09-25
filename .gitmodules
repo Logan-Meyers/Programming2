@@ -24,3 +24,9 @@
 [submodule "Projects/Drive-Formatter"]
 	path = Projects/Drive-Formatter
 	url = https://github.com/Logan-Meyers/Drive-Formatter.git
+[submodule "College/firstfm"]
+	path = College/firstfm
+	url = https://github.com/AndrewN4675/firstfm.git
+[submodule "College/movie_nn"]
+	path = College/movie_nn
+	url = https://github.com/JohnnyBoiTime/movie_nn.git
