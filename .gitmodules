@@ -30,3 +30,6 @@
 [submodule "College/movie_nn"]
 	path = College/movie_nn
 	url = https://github.com/JohnnyBoiTime/movie_nn.git
+[submodule "Projects/CPTS_260_Tools"]
+	path = Projects/CPTS_260_Tools
+	url = https://github.com/Logan-Meyers/CPTS_260_Tools.git
