@@ -36,7 +36,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# load bash aliases defined in a file
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+# load common aliases defined in a file
+if [ -f ~/.common_aliases ]; then
+    . ~/.common_aliases
 fi

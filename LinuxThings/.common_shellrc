@@ -1,0 +1,32 @@
+alias pyvenv="source ~/Documents/Programming2/PyVenv/venv/bin/activate"
+alias cdprog="cd ~/Documents/Programming2"
+alias finder="open $1"
+alias tallylines='function _tallylines() { find "$1" -type f -exec cat {} + | wc -l; }; _tallylines'export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+alias gst='git status'
+alias gfp='git fetch && git pull'
+alias ll='ls -laFG'
+
+# personal git shortcuts
+alias gst="git status"
+alias gfp="git fetch && git pull"
+# function to git add all, commit with passed along message, and push if successful
+gacp() {
+  if [ $# -eq 0 ]; then
+    echo "Error: Commit message required."
+    return 1
+  fi
+  git add .
+  git commit -m "$*"
+  git push
+}
+
+git_branch() {
+  # Check if the current directory is part of a Git repository
+  if git rev-parse --is-inside-work-tree &>/dev/null; then
+    # Fetch the current branch name
+    branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+    if [ -n "$branch" ]; then
+      echo -e "($branch) "
+    fi
+  fi
+}
