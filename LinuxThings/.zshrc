@@ -14,4 +14,4 @@ else
 fi
 
 setopt prompt_subst
-PROMPT='[%B%F{green}%n%b%f@%B%F{magenta}%m%b%f]-[%B%F{blue}%1~%b%f] %B%F{yellow}$(git_branch)%b%f=> '
+PROMPT='%B%F{green}[%n]%b%f-%B%F{magenta}[%1~]%b%f%B%F{yellow}$(git_branch)%b%f=> '

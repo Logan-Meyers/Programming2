@@ -1,14 +1,35 @@
-alias pyvenv="source ~/Documents/Programming2/PyVenv/venv/bin/activate"
-alias cdprog="cd ~/Documents/Programming2"
-alias finder="open $1"
+# get system platform
+unameOut="$(uname -s)"
+case "${unameOut}" in
+    Linux*)
+        if [ -n "$WSL_INTEROP" ]; then
+            platform="WSL"
+        else
+            platform="Linux"
+        fi
+        ;;
+    Darwin*)
+        platform="Mac"
+        ;;
+    *)
+        platform="Unknown"
+        ;;
+esac
+
+# custom aliases
+alias pyvenv="source ~/Desktop/Programming2/PyVenv/venv/bin/activate"
+alias cdprog="cd ~/Desktop/Programming2"
 alias tallylines='function _tallylines() { find "$1" -type f -exec cat {} + | wc -l; }; _tallylines'export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-alias gst='git status'
-alias gfp='git fetch && git pull'
 alias ll='ls -laFG'
 
-# personal git shortcuts
-alias gst="git status"
-alias gfp="git fetch && git pull"
+# conditional alias for opening directories in GUI based on system
+if [[ "$platform" == "Mac" ]] ; then alias finder="open $1"; fi
+if [[ "$platform" == "WSL" ]] ; then alias open="explorer.exe $1"; fi
+
+# git aliases & short cuts
+alias gst='git status'
+alias gfp='git fetch && git pull'
+
 # function to git add all, commit with passed along message, and push if successful
 gacp() {
   if [ $# -eq 0 ]; then
@@ -20,13 +41,15 @@ gacp() {
   git push
 }
 
+# function to get the current branch of the current repository we're in
 git_branch() {
   # Check if the current directory is part of a Git repository
   if git rev-parse --is-inside-work-tree &>/dev/null; then
     # Fetch the current branch name
     branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
     if [ -n "$branch" ]; then
-      echo -e "($branch) "
+      # Output: -(<branch>) in yellow
+      echo -e "-($branch)"
     fi
   fi
 }

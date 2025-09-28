@@ -15,10 +15,10 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    # PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-    # PS1="\[\e[0m\]┌─┤\[\e[1;32m\]\u\[\e[0m\]@\[\e[1;35m\]\h\[\e[0m\]├─┤\[\e[1;34m\]\w\[\e[0m\]\n└─┤\\$ "
-    # PS1='[\e[1;32m\u\e[0m@\e[1;35m\h\e[0m]─[\e[1;34m\W\e[0m]=> '
-    PS1='[\[\e[1;32m\]\u\[\e[0m\]@\[\e[1;35m\]\h\[\e[0m\]]─[\[\e[1;34m\]\W\[\e[0m\]]$(git_branch)=> '
+    PS1='\[\e[1;32m\][\u]\[\e[0m\]-\[\e[1;35m\][\W]\[\e[0m\]'
+    # Show git branch if available using existing git_branch function, with color formatting here
+    PS1+='\[\033[1;93m\]$(git_branch)\[\033[0m\]'
+    PS1+='=> '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -28,8 +28,6 @@ unset color_prompt force_color_prompt
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
 
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
@@ -37,6 +35,6 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # load common aliases defined in a file
-if [ -f ~/.common_aliases ]; then
-    . ~/.common_aliases
+if [ -f ~/.common_shellrc ]; then
+    . ~/.common_shellrc
 fi
