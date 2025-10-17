@@ -1,0 +1,20 @@
+add_newline = true
+command_timeout = 200
+
+# Main format string — do NOT add any brackets here, let each module add its own
+format = '\[$username\]-\[$directory\]\[$git_branch\] => '
+
+[username]
+show_always = true
+style_user = "bold green"
+format = "[$user]($style)"  # Brackets are here
+
+[directory]
+truncation_length = 1
+truncation_symbol = ""
+style = "fg:13"
+format = "[$path]($style)"  # Brackets go here
+
+[git_branch]
+style = "bold yellow"
+format = "[$branch]($style)"  # Brackets go here
