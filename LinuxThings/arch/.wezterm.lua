@@ -4,9 +4,12 @@ local wezterm = require 'wezterm'
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
+-- disable wayland
+config.enable_wayland = false
+
 -- Animation Stuff
 config.animation_fps = 75
-config.font_size = 12
+config.font_size = 10
 
 -- Font Things
 config.font = wezterm.font 'Otonokizaka Mono II'
