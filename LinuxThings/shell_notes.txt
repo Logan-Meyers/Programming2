@@ -1,0 +1,46 @@
+Old zsh prompt:
+    setopt prompt_subst
+    PROMPT='%B%F{green}[%n]%b%f-%B%F{magenta}[%1~]%b%f%B%F{yellow}$(git_branch)%b%f=> '
+
+Get system platform
+    # get system platform
+    unameOut="$(uname -s)"
+    case "${unameOut}" in
+        Linux*)
+            if [ -n "$WSL_INTEROP" ]; then
+                platform="WSL"
+            else
+                platform="Linux"
+            fi
+            ;;
+        Darwin*)
+            platform="Mac"
+            ;;
+        *)
+            platform="Unknown"
+            ;;
+    esac
+
+function to get git branch of current folder
+    # function to get the current branch of the current repository we're in
+    git_branch() {
+    # Check if the current directory is part of a Git repository
+    if git rev-parse --is-inside-work-tree &>/dev/null; then
+        # Fetch the current branch name
+        branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+        if [ -n "$branch" ]; then
+        # Output: -(<branch>) in yellow
+        echo -e "-($branch)"
+        fi
+    fi
+    }
+
+Old bash prompt
+    if [ "$color_prompt" = yes ]; then
+        PS1='\[\e[1;32m\][\u]\[\e[0m\]-\[\e[1;35m\][\W]\[\e[0m\]'
+        # Show git branch if available using existing git_branch function, with color formatting here
+        PS1+='\[\033[1;93m\]$(git_branch)\[\033[0m\]'
+        PS1+='=> '
+    else
+        PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    fi
