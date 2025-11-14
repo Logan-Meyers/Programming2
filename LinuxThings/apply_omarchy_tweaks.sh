@@ -11,8 +11,10 @@ REMOVE_PKGS="spotify 1password-cli 1password-beta aether kdenlive signal-desktop
 # github repositories to clone into ~/Documents (use full git URLs)
 # Example: "https://github.com/username/repo.git"
 REPOS=(
-  "https://github.com/example/my-dotfiles.git"
-  # add other repos here, one per line
+  https://github.com/Logan-Meyers/Programming2.git
+  https://github.com/Logan-Meyers/PrismInstances.git
+  https://github.com/Logan-Meyers/MinecraftServers.git
+  https://github.com/Logan-Meyers/WSU-Obsidian-FA25.git
 )
 
 DOCUMENTS_DIR="${HOME}/Documents"
@@ -45,9 +47,7 @@ install_pkgs() {
 
 # --- AUR installation (yay/paru detection) ---
 find_aur_helper() {
-  if command -v paru >/dev/null 2>&1; then
-    echo "paru"
-  elif command -v yay >/dev/null 2>&1; then
+  if command -v yay >/dev/null 2>&1; then
     echo "yay"
   else
     echo ""
@@ -207,6 +207,113 @@ add_game_fstab() {
   info "You can test mount with: sudo mount ${GAME_MOUNT} (or reboot)"
 }
 
+# --- install aliases for bash ---
+install_aliases() {
+  local script_dir source_file target bashrc zshrc dest_re
+
+  script_dir="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" >/dev/null 2>&1 && pwd)"
+  source_file="${script_dir}/.common_aliases"
+  if [[ ! -f "$source_file" ]]; then
+    warn "No .common_aliases at $source_file — skipping."
+    return 1
+  fi
+
+  target="${HOME}/.common_aliases"
+  if [[ -f "$target" && cmp -s "$source_file" "$target" ]]; then
+    info ".common_aliases already up-to-date at $target"
+  else
+    info "Copying $source_file -> $target"
+    cp "$source_file" "$target"
+    chmod 644 "$target"
+  fi
+
+  # Idempotent source line regex (allow spaces/tabs)
+  dest_re='^[[:space:]]*source[[:space:]]+~/.common_aliases[[:space:]]*$'
+  bashrc="${HOME}/.bashrc"
+  zshrc="${HOME}/.zshrc"
+
+  # Ensure bashrc sources the aliases
+  if [[ -f "$bashrc" ]]; then
+    if ! grep -Eq "$dest_re" "$bashrc"; then
+      info "Adding source line to $bashrc"
+      printf '\n# load common aliases\nsource ~/.common_aliases\n' >> "$bashrc"
+    else
+      info "$bashrc already sources ~/.common_aliases"
+    fi
+  else
+    info "Creating $bashrc and adding source line"
+    printf '# ~/.bashrc\n# load common aliases\nsource ~/.common_aliases\n' > "$bashrc"
+  fi
+
+  # If user has zsh, add there too (safe/no-op if they don't use zsh)
+  if [[ -f "$zshrc" ]]; then
+    if ! grep -Eq "$dest_re" "$zshrc"; then
+      info "Adding source line to $zshrc"
+      printf '\n# load common aliases\nsource ~/.common_aliases\n' >> "$zshrc"
+    else
+      info "$zshrc already sources ~/.common_aliases"
+    fi
+  fi
+
+  info "Aliases installed. Reload with: source ~/.bashrc"
+}
+
+# --- remove default hypr bindings I don't want ---
+remove_hypr_bindings() {
+  local HYPR_BINDINGS="${HOME}/.config/hypr/bindings.conf"
+  local backup ts prefixes regex
+
+  prefixes=(
+    "bindd = SUPER SHIFT, G"
+    "bindd = SUPER SHIFT, W"
+    "bindd = SUPER SHIFT, A"
+    "bindd = SUPER SHIFT ALT, A"
+    "bindd = SUPER SHIFT, C"
+    "bindd = SUPER SHIFT, E"
+    "bindd = SUPER SHIFT, Y"
+    "bindd = SUPER SHIFT ALT, G"
+    "bindd = SUPER SHIFT CTRL, G"
+    "bindd = SUPER SHIFT, P"
+    "bindd = SUPER SHIFT, X"
+    "bindd = SUPER SHIFT ALT, X"
+  )
+
+  if [[ ! -f "$HYPR_BINDINGS" ]]; then
+    warn "No hypr bindings file at $HYPR_BINDINGS — nothing to do."
+    return 0
+  fi
+
+  ts="$(date +%s)"
+  backup="${HYPR_BINDINGS}.bak.${ts}"
+  cp -- "$HYPR_BINDINGS" "$backup"
+  info "Backed up original to $backup"
+
+  # Build a single alternation regex of quoted, escaped prefixes
+  regex=""
+  for p in "${prefixes[@]}"; do
+    # escape regex metachars
+    local esc
+    esc="$(printf '%s' "$p" | sed -e 's/[]\/$*.^[]/\\&/g')"
+    if [[ -z "$regex" ]]; then
+      regex="^[:space:]*${esc}"
+    else
+      regex="${regex}\|^[:space:]*${esc}"
+    fi
+  done
+
+  # If no prefixes, nothing to do
+  if [[ -z "$regex" ]]; then
+    info "No prefixes configured; aborting."
+    return 0
+  fi
+
+  # Use awk to remove any line matching any of the prefixes (leading space allowed)
+  awk -v r="$regex" 'BEGIN{IGNORECASE=0} { if ($0 ~ r) next; print }' "$backup" > "${HYPR_BINDINGS}.tmp" \
+    && mv "${HYPR_BINDINGS}.tmp" "$HYPR_BINDINGS"
+
+  info "Removed matching bindings from $HYPR_BINDINGS (see backup $backup)."
+}
+
 # --- run everything ---
 run_all() {
   info "Running full setup. This will require sudo for package and fstab operations."
@@ -221,6 +328,8 @@ run_all() {
   clone_repos
   tweak_input_conf
   add_game_fstab
+  install_aliases
+  remove_hypr_bindings
 
   info "All done."
 }
@@ -231,14 +340,16 @@ usage() {
 Usage: $0 [command]
 
 Commands:
-  install_pkgs       Install official packages
-  install_aur_pkgs   Install AUR packages (requires paru/yay)
-  remove_pkgs        Remove unwanted packages
-  clone_repos        Clone GitHub repos into $DOCUMENTS_DIR
-  tweak_input_conf   Edit $HYPR_INPUT (sensitivity + natural_scroll)
-  add_game_fstab     Add fstab entry for $GAME_DEVICE -> $GAME_MOUNT
-  run_all            Run everything (prompt)
-  help               Show this help
+  install_pkgs         Install official packages
+  install_aur_pkgs     Install AUR packages (requires paru/yay)
+  remove_pkgs          Remove unwanted packages
+  clone_repos          Clone GitHub repos into $DOCUMENTS_DIR
+  tweak_input_conf     Edit $HYPR_INPUT (sensitivity + natural_scroll)
+  add_game_fstab       Add fstab entry for $GAME_DEVICE -> $GAME_MOUNT
+  install_aliases      Add bash aliases
+  remove_hypr_bindings Remove annoying default bindings
+  run_all              Run everything (prompt)
+  help                 Show this help
 EOF
 }
 
@@ -256,6 +367,8 @@ main() {
     tweak_input_conf) tweak_input_conf ;;
     tweak_btop_conf) tweak_btop_conf ;;
     add_game_fstab) add_game_fstab ;;
+    install_aliases) install_aliases ;;
+    remove_hypr_bindings) remove_hypr_bindings ;;
     run_all) run_all ;;
     help|--help|-h) usage ;;
     *) err "Unknown command: $1"; usage; exit 2 ;;
