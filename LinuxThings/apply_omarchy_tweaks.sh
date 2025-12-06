@@ -8,6 +8,16 @@ PKGS="discord wezterm ncdu visual-studio-code-bin steam gamescope vulkan-radeon 
 AUR_PKGS="zen-browser-zin tidal-hifi google-drive-ocamlfuse-git ventoy-bin"
 REMOVE_PKGS="spotify 1password-cli 1password-beta aether kdenlive signal-desktop xournalpp"
 
+# packages:
+# git-lfs
+# hsa-rocr
+# rocm-device-libs
+# rocm-smi-lib
+# prism-launcher
+
+# aur:
+# packet
+
 # github repositories to clone into ~/Documents (use full git URLs)
 # Example: "https://github.com/username/repo.git"
 REPOS=(
