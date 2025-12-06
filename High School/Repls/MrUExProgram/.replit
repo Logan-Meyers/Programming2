@@ -1,0 +1,23 @@
+run = ["python3", "driver.py"]
+language = "python3"
+entrypoint = "main.py"
+hidden = ["venv", ".config", "**/__pycache__", "**/.mypy_cache", "**/*.pyc", "driver.py"]
+
+audio = true
+modules = ["python-3.8"]
+
+[nix]
+channel = "stable-21_11"
+# [interpreter]
+# command = [
+#  "prybar-python3",
+#  "-q",
+#  "--ps1",
+#  "\u0001\u001b[33m\u0002\u0001\u001b[00m\u0002 ",
+#  "-i"
+#]
+
+[env]
+
+[agent]
+expertMode = true
