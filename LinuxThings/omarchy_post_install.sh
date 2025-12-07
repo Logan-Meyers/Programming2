@@ -172,7 +172,7 @@ remove_pkgs() {
   echo 
 
   # Run the removal with proper quoting
-  sudo yay -Rns --noconfirm "${to_remove[@]}"
+  yay -Rns --noconfirm "${to_remove[@]}"
 }
 
 install_pkgs() {
@@ -196,7 +196,7 @@ install_pkgs() {
 		return 1
 	fi
 
-	sudo yay -S --needed --noconfirm "${to_install[@]}"
+	yay -S --needed --noconfirm "${to_install[@]}"
 }
 
 install_aur_pkgs() {
@@ -220,7 +220,7 @@ install_aur_pkgs() {
 		return 1
 	fi
 
-	sudo yay -S --needed --noconfirm "${to_install[@]}"
+	yay -S --needed --noconfirm "${to_install[@]}"
 }
 
 gh_auth() {
