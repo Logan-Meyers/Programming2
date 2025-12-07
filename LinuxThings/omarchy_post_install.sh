@@ -96,7 +96,8 @@ REMOVE_PKGS=(
 	xournalpp
 )
 REMOVE_WEBAPPS=(
-    ChatGPT
+    Basecamp
+	ChatGPT
     Discord
     Figma
     GitHub
@@ -105,6 +106,9 @@ REMOVE_WEBAPPS=(
     Google\ Photos
     HEY
     WhatsApp
+	X
+	YouTube
+	Zoom
 )
 REPO_CLONE_DIR_PAST_HOME="Documents/"
 
