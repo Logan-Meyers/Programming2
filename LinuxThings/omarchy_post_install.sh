@@ -74,11 +74,17 @@ PKGS=(
 	vulkan-radeon
 	lib32-vulkan-radeon
 	github-cli
+  git-lfs
+  prismlauncher
 )
 AUR_PKGS=(
 	zen-browser-bin
 	tidal-hifi
 	ventoy-bin
+  orca-slicer-bin
+  oversteer
+  playit-bin
+  github-desktop-bin
 )
 REMOVE_PKGS=(
 	spotify
