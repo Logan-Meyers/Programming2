@@ -74,17 +74,18 @@ PKGS=(
 	vulkan-radeon
 	lib32-vulkan-radeon
 	github-cli
-  git-lfs
-  prismlauncher
+  	git-lfs
+	gimp
+  	prismlauncher
 )
 AUR_PKGS=(
 	zen-browser-bin
 	tidal-hifi
 	ventoy-bin
-  orca-slicer-bin
-  oversteer
-  playit-bin
-  github-desktop-bin
+  	orca-slicer-bin
+  	oversteer
+	playit-bin
+	github-desktop-bin
 )
 REMOVE_PKGS=(
 	spotify
@@ -92,11 +93,13 @@ REMOVE_PKGS=(
 	1password-beta
 	aether
 	kdenlive
+	pinta
 	signal-desktop
 	xournalpp
 )
 REMOVE_WEBAPPS=(
-    Basecamp
+    HEY
+	Basecamp
 	ChatGPT
     Discord
     Figma
@@ -109,6 +112,7 @@ REMOVE_WEBAPPS=(
 	X
 	YouTube
 	Zoom
+	Fizzy
 )
 REPO_CLONE_DIR_PAST_HOME="Documents/"
 
