@@ -1,0 +1,11 @@
+{
+  "item.tutorial-mod.ruby": "Ruby",
+  "item.tutorial-mod.raw_ruby": "Raw Ruby",
+
+  "block.tutorial-mod.ruby_block": "Block of Ruby",
+  "block.tutorial-mod.ruby_ore": "Ruby Ore",
+
+  "item.tutorial-mod.metal_detector": "Metal Detector",
+
+  "itemgroup.ruby": "Ruby Tutorial Group"
+}

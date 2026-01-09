@@ -1,0 +1,15 @@
+// 1.20.1	2025-12-28T22:15:47.73645523	Tutorial Mod/Recipes
+86235d1c55ffbbb782c706be90dadfd7ef06c947 data/tutorial-mod/recipes/ruby_from_smelting_raw_ruby.json
+68e100247c8c7d0de4b84b14be0cbfdc42567ef3 data/tutorial-mod/recipes/ruby_block.json
+1a32f3126cc92892c31583dc78ebc654b9569101 data/tutorial-mod/recipes/ruby_from_smelting_ruby_ore.json
+c6ea3592f729ecdce161aef0db15fcedb24e6019 data/tutorial-mod/advancements/recipes/misc/ruby_from_smelting_raw_ruby.json
+b69ed268ed621510947bd88e8511bf24dd025be6 data/tutorial-mod/recipes/metal_detector.json
+271a70b4ac30ad4983f8102fd8f06708313d2c8e data/tutorial-mod/recipes/ruby_from_blasting_ruby_ore.json
+1d519eeb42453e4733f8eaca4c1ac79e95c63f4b data/tutorial-mod/advancements/recipes/decorations/ruby_block.json
+6a15eaef1a1ba394de26c226d1dfc0e0b30300f4 data/tutorial-mod/advancements/recipes/misc/ruby_from_blasting_raw_ruby.json
+c4c394818938940522fc4c558329516ffec19b62 data/tutorial-mod/advancements/recipes/misc/ruby_from_smelting_ruby_ore.json
+35b215d68eea79449c89fb3249ddf71ae9c9c122 data/tutorial-mod/recipes/ruby_from_blasting_raw_ruby.json
+45a9e8d463f2387903815527207aeff5556ab571 data/tutorial-mod/recipes/ruby.json
+87b4e7092654bd5ca0831e76f04500948598648e data/tutorial-mod/advancements/recipes/tools/metal_detector.json
+ff32b7687cda1dd276b2f6d807a2c312cd9c9da4 data/tutorial-mod/advancements/recipes/building_blocks/ruby.json
+de443cdb7e6749cc6caf8d4a4b88a61db868603a data/tutorial-mod/advancements/recipes/misc/ruby_from_blasting_ruby_ore.json

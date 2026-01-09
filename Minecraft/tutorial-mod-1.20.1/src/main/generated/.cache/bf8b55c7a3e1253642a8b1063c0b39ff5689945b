@@ -1,0 +1,10 @@
+// 1.20.1	2025-12-28T22:15:47.736894454	Tutorial Mod/Model Definitions
+1e3276edab273e933ef9443aba35ac14d15fa3d4 assets/tutorial-mod/models/item/metal_detector.json
+1c218af1a0e7c6fa854a6c4ab979549d1d8fc59e assets/tutorial-mod/models/block/ruby_block.json
+a898e77a383e307d1c9f4778bce9d9d38240412b assets/tutorial-mod/models/item/raw_ruby.json
+7d2edcf282412be188732d3a9070ceb29c48ec2d assets/tutorial-mod/blockstates/ruby_ore.json
+06f84983ce248a5731d3826b7e71b753ff57dc7b assets/tutorial-mod/models/item/ruby_ore.json
+bbf15c1b3329f7d4b6207c6c2af8a35715eb344f assets/tutorial-mod/blockstates/ruby_block.json
+869a4e805bda27cde6d01efa6107298cd5237ba8 assets/tutorial-mod/models/item/ruby_block.json
+f07432adb2604b65879e21ceaaa2cc66503a1626 assets/tutorial-mod/models/block/ruby_ore.json
+8258f2c4f6074b6f5b4cd1443f315d9d414623a4 assets/tutorial-mod/models/item/ruby.json
