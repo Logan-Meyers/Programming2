@@ -33,3 +33,6 @@
 [submodule "Projects/CPTS_260_Tools"]
 	path = Projects/CPTS_260_Tools
 	url = https://github.com/Logan-Meyers/CPTS_260_Tools.git
+[submodule "Minecraft/TaCZ-Vanilla-Mobs"]
+	path = Minecraft/TaCZ-Vanilla-Mobs
+	url = https://github.com/Logan-Meyers/TaCZ-Vanilla-Mobs.git
