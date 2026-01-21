@@ -1,0 +1,18 @@
+Arch git credentials guide:
+- install `git-credentials-oauth` via the AUR
+- configure with `git credential-oauth configure`
+- create ssh keys and add to machine with:
+  - `ssh-keygen -t ed25519 -C "EMAIL/USERNAME" -f ~/.ssh/id_ed25519_IDENTIFIER`
+  - `eval $(ssh-agent -s)`
+  - `ssh-add ~/.ssh/id_ed25519_IDENTIFIER`
+  - `chmod 600 ~/.ssh/id_ed25519_IDENTIFIER`
+- cat the .pub file in .ssh for the identifier you want and add it to github/gitlab
+- create a `config` file in `.ssh/` with the contents:
+
+Host NAME
+  HostName gitlab.eecs.wsu.edu or github.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519_IDENTIFIER
+
+- clone with `git clone git@NAME:USERNAME/PROJECT.git`
+- test connection with `ssh -T git@NAME`
