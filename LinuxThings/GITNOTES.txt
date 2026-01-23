@@ -1,6 +1,6 @@
 Arch git credentials guide:
-- install `git-credentials-oauth` via the AUR
-- configure with `git credential-oauth configure`
+- install `git-credentials-oauth` via the AUR -- ONLY ON LINUX
+- configure with `git credential-oauth configure`  -- ONLY ON LINUX
 - create ssh keys and add to machine with:
   - `ssh-keygen -t ed25519 -C "EMAIL/USERNAME" -f ~/.ssh/id_ed25519_IDENTIFIER`
   - `eval $(ssh-agent -s)`
