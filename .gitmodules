@@ -36,3 +36,6 @@
 [submodule "Minecraft/TaCZ-Vanilla-Mobs"]
 	path = Minecraft/TaCZ-Vanilla-Mobs
 	url = https://github.com/Logan-Meyers/TaCZ-Vanilla-Mobs.git
+[submodule "College/Drive-Manager"]
+	path = College/Drive-Manager
+	url = git@github-personal:AndrewN4675/Drive-Manager.git
