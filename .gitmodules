@@ -42,3 +42,6 @@
 [submodule "VibeCodedBS"]
 	path = VibeCodedBS
 	url = git@github-personal:Logan-Meyers/VibeCodedBS
+[submodule "College/Python-AI-Learning"]
+	path = College/Python-AI-Learning
+	url = git@github-personal:Logan-Meyers/Python-AI-Learning
