@@ -38,10 +38,10 @@
 	url = https://github.com/Logan-Meyers/TaCZ-Vanilla-Mobs.git
 [submodule "College/Drive-Manager"]
 	path = College/Drive-Manager
-	url = git@github-personal:AndrewN4675/Drive-Manager.git
+	url = git@github.com:AndrewN4675/Drive-Manager.git
 [submodule "VibeCodedBS"]
 	path = VibeCodedBS
-	url = git@github-personal:Logan-Meyers/VibeCodedBS
+	url = git@github.com:Logan-Meyers/VibeCodedBS
 [submodule "College/Python-AI-Learning"]
 	path = College/Python-AI-Learning
-	url = git@github-personal:Logan-Meyers/Python-AI-Learning
+	url = git@github.com:Logan-Meyers/Python-AI-Learning
