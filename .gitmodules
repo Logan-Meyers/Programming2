@@ -1,18 +1,18 @@
 [submodule "College/CompSciCode"]
 	path = College/CompSciCode
-	url = https://github.com/TheTerrarian03/CompSciCode.git
+	url = git@github.com:Logan-Meyers/CompSciCode.git
 [submodule "High School/AP-Comp-Codes/AP_Comp_Encoder"]
 	path = High School/AP-Comp-Codes/AP_Comp_Encoder
-	url = https://github.com/TheTerrarian03/AP_Comp_Encoder.git
+	url = git@github.com:Logan-Meyers/AP_Comp_Encoder.git
 [submodule "Projects/MinecraftProfileManager"]
 	path = Projects/MinecraftProfileManager
-	url = https://github.com/TheTerrarian03/MinecraftProfileManager.git
+	url = git@github.com:Logan-Meyers/MinecraftProfileManager.git
 [submodule "College/attendance-clicker"]
 	path = College/attendance-clicker
 	url = https://github.com/donmjoseph/attendance-clicker.git
 [submodule "Projects/VisualStudioTools"]
 	path = Projects/VisualStudioTools
-	url = https://github.com/TheTerrarian03/VisualStudioTools.git
+	url = git@github.com:Logan-Meyers/VisualStudioTools.git
 [submodule "Projects/vs-sln-gen"]
 	path = Projects/vs-sln-gen
 	url = https://github.com/Huskiefusion/vs-sln-gen.git
@@ -20,10 +20,10 @@
 	High = School/AP-Comp-Codes/AP_Comp_Encoder.branch
 [submodule "Projects/MinecraftServerManager"]
 	path = Projects/MinecraftServerManager
-	url = https://github.com/TheTerrarian03/MinecraftServerManager.git
+	url = git@github.com:Logan-Meyers/MinecraftServerManager.git
 [submodule "Projects/Drive-Formatter"]
 	path = Projects/Drive-Formatter
-	url = https://github.com/Logan-Meyers/Drive-Formatter.git
+	url = git@github.com:Logan-Meyers/Drive-Formatter.git
 [submodule "College/firstfm"]
 	path = College/firstfm
 	url = https://github.com/AndrewN4675/firstfm.git
@@ -32,10 +32,10 @@
 	url = https://github.com/JohnnyBoiTime/movie_nn.git
 [submodule "Projects/CPTS_260_Tools"]
 	path = Projects/CPTS_260_Tools
-	url = https://github.com/Logan-Meyers/CPTS_260_Tools.git
+	url = git@github.com:Logan-Meyers/CPTS_260_Tools.git
 [submodule "Minecraft/TaCZ-Vanilla-Mobs"]
 	path = Minecraft/TaCZ-Vanilla-Mobs
-	url = https://github.com/Logan-Meyers/TaCZ-Vanilla-Mobs.git
+	url = git@github.com:Logan-Meyers/TaCZ-Vanilla-Mobs.git
 [submodule "College/Drive-Manager"]
 	path = College/Drive-Manager
 	url = git@github.com:AndrewN4675/Drive-Manager.git
